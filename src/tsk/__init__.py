@@ -37,7 +37,15 @@ class Notification:
         """Send this notification."""
         try:
             subprocess.run(
-                ["notify-send", "--app-name=tsk", f"--urgency={self.urgency}", f"--icon={self.icon}", f"--expire-time={self.expire_time}", self.summary, self.body],
+                [
+                    "notify-send",
+                    "--app-name=tsk",
+                    f"--urgency={self.urgency}",
+                    f"--icon={self.icon}",
+                    f"--expire-time={self.expire_time}",
+                    self.summary,
+                    self.body,
+                ],
                 check=True,
                 capture_output=True,
             )
